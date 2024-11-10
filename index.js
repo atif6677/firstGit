@@ -1,9 +1,8 @@
 // Write your code below:
-const elements = document.getElementsByClassName('fruit');
+const listItem = document.getElementsByTagName('li');
 
-elements[2].style.backgroundColor = 'yellow';
+for (let i = 0; i < listItem.length; i++){
+    listItem[i].style.fontStyle='italic'
+}
 
-elements[0].style.fontWeight = 'bold';
-elements[1].style.fontWeight = 'bold';
-elements[2].style.fontWeight = 'bold';
-elements[3].style.fontWeight = 'bold';
+listItem[4].style.color='blue'
