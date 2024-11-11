@@ -1,37 +1,52 @@
 // Write your code below:
-const head = document.createElement('h3');
-
-const headText = document.createTextNode('Buy high quality organic fruits online')
-
-head.appendChild(headText);
-
-head.style.fontStyle = 'italic'
-
-const divs = document.getElementsByTagName('div');
-
-const firstDiv = divs[0];
-
-firstDiv.appendChild(head)
+// Add the Edit Button:
 
 
+
+const divs = document.getElementsByTagName('li');
+
+for (let i = 0; i < divs.length; i++) {
+  const editButton = document.createElement('button');
+  const editText = document.createTextNode('Edit');
+  editButton.appendChild(editText);
+  editButton.classList.add('edit-btn');
+  divs[i].appendChild(editButton);
+}
 
 
 
 
+// Implement the code as in video but with one extra 'Edit'
 
+const form = document.querySelector('form');
+const fruits = document.querySelector('.fruits');
+form.addEventListener('submit', function (event)
+{
 
+  event.preventDefault();
 
-const headr = document.createElement('p');
+  const fruitToAdd = document.getElementById('fruit-to-add');
 
-const headrText = document.createTextNode('Total fruits:4')
+  const newLi = document.createElement('li');
 
-headr.appendChild(headrText);
+  newLi.classList.add('fruit')
+  newLi.innerHTML = fruitToAdd.value + '<button class="delete-btn">x</button>';
 
-const divsr = document.getElementsByTagName('div');
+  const editButton = document.createElement('button');
+  editButton.classList.add('edit-btn');
+  editButton.textContent = 'Edit';
+  newLi.appendChild(editButton);
 
-const secondDiv = divsr[1];
+  newLi.classList.add('fruit')
+  fruits.appendChild(newLi);
+})
 
-const fruits =document.querySelector('.fruits')
-secondDiv.insertBefore(headr, fruits);
+fruits.addEventListener('click', function (event) {
 
-headr.id = 'fruits-total'
+  if (event.target.classList.contains('delete-btn')) {
+    const fruitToDelete = event.target.parentElement;
+
+    fruits.removeChild(fruitToDelete);
+  };
+
+});
