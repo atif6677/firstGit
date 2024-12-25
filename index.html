@@ -9,19 +9,16 @@
 </head>
 
 <body style="margin: 0">
-  <div id="header" style="padding: 1rem 0; background-color: lightblue">
-    <h1 id="main-heading" style="margin: 0">Fruit Shop</h1>
-  </div>
-  <div>
-    <h2 id="basket-heading">Fruits In Basket</h2>
-    <ul class="fruits">
-      <li class="fruit">Banana</li>
-      <li class="fruit">Apple</li>
-      <li class="fruit">Orange</li>
-      <li class="fruit">Kiwi</li>
-    </ul>
-  </div>
-  <div id="thanks"></div>
+  <form onsubmit="handleFormSubmit(event)">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" />
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" />
+    <label for="phone">Phone No</label>
+    <input type="tel" name="phone" id="phone" />
+    <button type="submit">Submit</button>
+  </form>
+  <ul id="listOfitems"></ul>
 </body>
 <script src="index.js"></script>
 
