@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+#customModal.hidden {
+  display: none;
+}
+#customModal.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
